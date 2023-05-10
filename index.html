@@ -5,43 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DETRAN</title>
-    <style>
-        body {
-            font: normal 18pt arial;
-        }
-        input#velocidade {
-            font: normal 14pt arial;
-        }
-        input#limite {
-            font: normal 14pt arial;
-        }
-        input#botaoconfirmar {
-            font: normal 18pt arial;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="logodetran.svg" type="image/x-icon">
 </head>
 <body>
-    <h1>Calculo de multa - DETRAN</h1>
-    Limite permitido no radar: <input type="number" name="limite" id="limite">
-    <p></p>
-    Velocidade registrada ao passar pelo radar: <input style="margin-bottom: 10px;" type="number" name="velocidade" id="velocidade">
-    <br />
-    <input id="botaoconfirmar" type="button" value="confirmar velocidade" onclick="confirmar_vel()">
-    <div id="txtlimite"></div>
-    <div id="txtvel"></div>
-    <div id="txtmulta"></div>
+    <header>
+        <div id="area">
+            <div><img src="logodetran.svg" alt="logodetran"></div>
+            <h1 class="centralizado">Calculo de multa - DETRAN</h1>
+            <div class="">
+                Limite permitido no radar: <input type="number" name="limite" id="limite">
+                <p></p>
+                Velocidade registrada <br> ao passar pelo radar: <input style="margin-bottom: 10px;" type="number" name="velocidade" id="velocidade">
+                <br />
+                <input id="botaoconfirmar" type="button" value="Confirmar velocidade" onclick="confirmar_vel()">
+            </div>
+            <div id="txtlimite"></div>
+            <div id="txtvel" class="center"></div>
+            <div id="txtmulta" class="center"></div>
+            <table>
+                <thead>
+                <tr>
+                <th>Excesso de velocidade</th>
+                <th>Valor da multa</th>
+                <th>Pontuação</th>
+                <th>Classificação</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>Até 20% da velocidade máxima permitida</td>
+                <td>R$ 130,16</td>
+                <td>4 pontos</td>
+                <td>Média</td>
+                </tr>
+                <tr>
+                <td>De 20% a 50% da velocidade máxima permitida</td>
+                <td>R$ 195,23</td>
+                <td>5 pontos</td>
+                <td>Grave</td>
+                </tr>
+                <tr>
+                <td>Superior a 50% da velocidade máxima permitida</td>
+                <td>R$ 880,41</td>
+                <td>7 pontos</td>
+                <td>Gravíssima</td>
+                </tr>
+                <tr>
+                <td>Ultrapassar em mais de 50% a velocidade máxima <br> permitida em vias de trânsito rápido</td>
+                <td>R$ 2.934,70</td>
+                <td>7 pontos</td>
+                <td>Gravíssima</td>
+                </tr>
+                </tbody>
+                </table>
+        </div>
+    </header>
     <script>
         function confirmar_vel() {
             var limite = Number(document.querySelector('input#limite').value)
-            txtlimite.innerHTML = `<p><strong>Limite:</strong> ${limite}.</p>`
 
             var velocidade = document.querySelector('input#velocidade')
             var txtvel = document.querySelector('div#txtvel')
+            
             var velregist = Number(velocidade.value)
-            txtvel.innerHTML = `<p><strong>Velocidade registrada:</strong> ${velregist}.</p>`
             if (velregist > 1.01 * limite && velregist <= 1.20 * limite ) {
-                txtvel.innerHTML += `<h1>Multado</h1>`
+                txtvel.innerHTML += `<h2>Multado</h2>`
                 var res = (velregist*100)/limite
                 txtvel.innerHTML += `<p>Você foi multado em <strong>R$130,16</strong> por ultrapassar ${(res-100).toFixed(2)}% do limite. `
                 }
@@ -60,8 +89,5 @@
             }
         }   
     </script>
-     <p><strong>De 1% - 20%:</strong> R$130,16.</p>
-     <p><strong>De 20% - 50%:</strong> R$195,23.</p>
-     <p><strong>De 50% para cima:</strong> R$880,41.</p>
 </body>
 </html>
