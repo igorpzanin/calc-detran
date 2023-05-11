@@ -12,17 +12,28 @@
 <body>
     <header>
         <div id="area">
-            <div><img src="logodetran.svg" alt="logodetran"></div>
+            <!--Imagem do detran-->
+            <div><img src="img/logodetran.svg" alt="logodetran"></div>
+
             <h1>Cálculo de multa - DETRAN</h1>
+
             <div>
+                <!--Campo para digitar limite do radar-->
                 Limite permitido no radar: <input type="number" name="limite" id="limite">
-                <p></p>
+
+                <!--Campo para digitar velocidade registrada no radar-->
                 Velocidade registrada <br> ao passar pelo radar: <input style="margin-bottom: 10px;" type="number" name="velocidade" id="velocidade">
                 <br/>
+
+                <!--Botão para confirmar-->
                 <input id="botaoconfirmar" type="button" value="Confirmar velocidade" onclick="confirmar_vel()">
             </div>
+
+            <!--Textos da informação de quanto foi a multa-->
             <div id="txtvel" class="center"></div>
             <div id="txtmulta" class="center"></div>
+
+            <!--Dados sobre a multa do detran-->
             <table>
                 <thead>
                 <tr>
