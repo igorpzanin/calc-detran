@@ -24,3 +24,15 @@ function confirmar_vel() {
         txtvel.innerHTML = `<h2>Nenhuma multa registrada!<h2/>`
     }
 }
+function entrarbotao() {
+    botaoconfirmar.style.background='rgb(124, 177, 122)'
+}
+function sairbotao(){
+    botaoconfirmar.style.background='green'
+}
+function clicandobotao(){
+    botaoconfirmar.style.background='rgb(42, 102, 40)'
+}
+function soltandobotao(){
+    botaoconfirmar.style.background='rgb(124, 177, 122)'
+}

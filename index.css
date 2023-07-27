@@ -7,18 +7,22 @@ body {
 }
 input#velocidade {
     font: normal 14pt arial;
-    margin-left: 55px;
 }
 input#limite {
     font: normal 14pt arial;
-    margin-left: 10px;
+    margin-left: 61px;
 }
 input#botaoconfirmar {
     font: normal 18pt arial;
+    background-color: green;
+    width: 300px;
+    height: 50px;
+    margin-left: 135px;
+    border-radius: 10px;
 }
 
 div#area {
-    background: rgb(252, 252, 252);
+    background: rgb(235, 233, 233);
     color:rgb(0, 0, 0);
     min-height: 95vh;
     padding-bottom: 50px;
@@ -29,6 +33,7 @@ div#area {
     flex-direction: column;
     width: 95vw;
     align-items: center;
+    
 }
 img {
     width: 300px;

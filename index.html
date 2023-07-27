@@ -14,7 +14,7 @@
         <div id="area">
             <!--Imagem do detran-->
             <div><img src="img/logodetran.svg" alt="logodetran"></div>
-
+            <div class="center">
             <h1>Cálculo de multa - DETRAN</h1>
 
             <div>
@@ -24,12 +24,16 @@
                 <br> <br>
 
                 <!--Campo para digitar velocidade registrada no radar-->
-                Velocidade registrada <br> ao passar pelo radar: <input style="margin-bottom: 10px;" type="number" name="velocidade" id="velocidade">
+                Velocidade registrada no radar: <input style="margin-bottom: 10px;" type="number" name="velocidade" id="velocidade">
                 <br/>
-
+                <input type="checkbox" name="item1" id="item1" value="Via de trânsito rapido.">
+                <label for="item1">Via de trânsito rápido</label>
+                <br>
+                <br>
                 <!--Botão para confirmar-->
-                <input id="botaoconfirmar" type="button" value="Confirmar velocidade" onclick="confirmar_vel()">
+                <input id="botaoconfirmar" type="button" value="CONFIRMAR" onclick="confirmar_vel()" onmouseenter="entrarbotao()" onmouseleave="sairbotao()" onmousedown="clicandobotao()" onmouseup="soltandobotao()">
             </div>
+        </div>
 
             <!--Textos da informação de quanto foi a multa-->
             <div id="txtvel" class="center"></div>
